@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/server.js"
+    "start": "concurrently \"cd todo-app && npx vite\" \"node ./src/server.js\"",
+    "dev": "cd todo-app && npx vite",
+    "build": "cd todo-app && npx vite build",
+    "serve": "cd todo-app && npx vite preview"
   },
   "repository": {
     "type": "git",
@@ -13,6 +16,7 @@
   "author": "Thongchai Kitiyanantawong",
   "license": "MIT",
   "dependencies": {
+    "concurrently": "^8.0.1",
     "json-server": "^0.16.2"
   }
 }
